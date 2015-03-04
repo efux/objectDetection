@@ -3,3 +3,9 @@ python:
         - "2.7"
 
 script: nosetests -v
+
+notifications:
+        email:
+                on_success: never
+                on_failure: always
+
