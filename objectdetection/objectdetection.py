@@ -1,6 +1,5 @@
 from pixeltodegree import PixelToDegree
 from camera import Camera
-from imagecamera import ImageCamera
 
 class ObjectDetection(object):
     """Interface for ObjectDetection, the getPosition- and init-methods have to be implemented"""

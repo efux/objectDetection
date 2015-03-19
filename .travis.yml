@@ -4,6 +4,12 @@ python:
 
 script: nosetests -v
 
+virtualenv:
+        system_site_packages: true
+
+before_install:
+        - sudo apt-get install -qq python-opencv
+
 notifications:
         email:
                 on_success: never
