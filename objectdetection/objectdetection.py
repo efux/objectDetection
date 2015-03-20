@@ -1,4 +1,5 @@
 from pixeltodegree import PixelToDegree
+from imagecamera import ImageCamera
 from camera import Camera
 
 class ObjectDetection(object):
