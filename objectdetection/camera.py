@@ -1,7 +1,7 @@
 try:
     from imageparameters import ImageParameters
     from imagecamera import ImageCamera
-    from picamera import PiCamera2
+    from picamera2 import PiCamera2
     import picamera
     import picamera.array
     pimode = True

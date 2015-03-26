@@ -6,7 +6,7 @@ class ImageCamera(object):
 
     def __init__(self, width, height):
         print "Image used..."
-        self.__img = cv2.imread('/media/win/Users/efux/Documents/dev/ipcv/Bilder/rechts.jpg')
+        self.__img = cv2.imread('img/1.jpg')
 
     def capture(self):
         """Return an image from the webcam."""

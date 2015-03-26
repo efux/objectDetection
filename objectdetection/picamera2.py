@@ -7,7 +7,7 @@ class PiCamera2(object):
     def __init__(self, width, height):
         print "Camera from Raspberry Pi used..."
         self.camera = picamera.PiCamera()
-        self.camera.resolution = (self.width, self.height)
+        self.camera.resolution = (width, height)
         self.stream = picamera.array.PiRGBArray(self.camera)
 
     def capture(self):
