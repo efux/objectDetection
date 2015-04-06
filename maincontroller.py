@@ -1,16 +1,17 @@
-from objectdetection.contourdetection import ContourDetection
-from objectdetection.hsvdetection import HSVDetection
+from objectdetection.candetection import CanDetection
 
 def main():
     """Main Controller application for PREN2"""
-    detections = []
-    detections.append(ContourDetection())
-    detections.append(HSVDetection())
+    detection = CanDetection()
 
-    for d in detections:
-        # If you print the distanceFromMiddle it is getting calculated multiple times,
-        # call either getDistanceFromMiddle() or getPosition()
-        print "Distanz zur Mitte: " + `d.getDistanceFromMiddle()` + " Drehwinkel: " + `d.getPosition()`
+    # Start initialisation for the camera and take the first initial image without a camera
+    detection.initialize()
+
+    # Initialisation done, waiting for keypress to start
+    raw_input("Press Enter to continue...")
+
+    # Detect the can
+    print "Turning the tellbot: " + `detection.getTurnAngleInDegree()`
 
 if __name__ == '__main__':
     main()

@@ -1,6 +1,7 @@
 try:
     from imageparameters import ImageParameters
     from imagecamera import ImageCamera
+    from webcam import Webcam
     from picamera2 import PiCamera2
     import picamera
     import picamera.array
@@ -8,7 +9,7 @@ try:
 except:
     pimode = False
 
-webcam = False
+webcam = True
 
 class Camera(object):
     """Camera object for getting pictures."""

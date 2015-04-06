@@ -11,4 +11,4 @@ class TestImageParameters(unittest.TestCase):
         self.assertEqual(240, ImageParameters.height)
 
     def test_ImageParametersContrastCalibration(self):
-        self.assertEquals(80, ImageParameters.contrastCalibration)
+        self.assertEquals(40, ImageParameters.contrastCalibration)

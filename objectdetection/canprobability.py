@@ -1,10 +1,11 @@
+from __future__ import division
 from imageparameters import ImageParameters
 
 class CanProbability(object): 
     """Class for the calculation of the probability, if a contour is a can."""
 
-    WEIGHT_AREASIZE = 0.4
-    WEIGHT_RATIO = 0.4
+    WEIGHT_AREASIZE = 0.6
+    WEIGHT_RATIO = 0.2
     WEIGHT_LENGTH = 0.2
 
     # This are the default values for the can (change when tested first with the picamera on the actual Tellbot)
