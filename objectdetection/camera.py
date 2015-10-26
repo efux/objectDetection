@@ -9,7 +9,7 @@ try:
 except:
     pimode = False
 
-webcam = True
+webcam = False
 
 class Camera(object):
     """Camera object for getting pictures."""

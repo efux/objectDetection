@@ -12,12 +12,13 @@ class CanDetection(object):
     def __init__(self):
         """Constructor for the CanDetection, assignes the wanted detection methods."""
         super(CanDetection, self).__init__()
-        self.__detections.append(ContourDetection())
-        self.__detections.append(HSVDetection())
+        self.__camera = Camera()
 
     def initialize(self):
         """Initializes the camera and takes a first snapshot for the difference detection."""
-        self.__camera = Camera()
+        self.__detections = []
+        self.__detections.append(ContourDetection())
+        self.__detections.append(HSVDetection())
         __firstImage = self.__camera.capture()
         self.__detections.append(DifferenceDetection(__firstImage))
 
@@ -26,10 +27,12 @@ class CanDetection(object):
         imageWithCan = self.__camera.capture()
 
         probabilities = []
+        probabilities.append(Measurement(0, 0))
         for d in self.__detections:
             m = Measurement(d.getPosition(imageWithCan), d.getProbability())
             print m
-            probabilities.append(m)
+            if abs(m.angle)<18:
+                probabilities.append(m)
 
         finalMeasurement = sorted(probabilities, key=lambda x: x.probability, reverse=True)[0]
-        return finalMeasurement
+        return finalMeasurement.angle
